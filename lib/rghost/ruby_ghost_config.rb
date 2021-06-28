@@ -1,3 +1,4 @@
+# coding: utf-8
 require "rghost/ps_object"
 require 'rghost/font_map'
 
@@ -81,6 +82,7 @@ module RGhost::Config
     GS[:path]=case RbConfig::CONFIG['host_os']
                 when /linux/ then '/usr/bin/gs'
                 when /mac|darwin|freebsd|bsd/ then '/usr/local/bin/gs'
+                when /darwin20/ then '/opt/homebrew/bin/gs'
                 when /mswin|mingw/ then 'C:\\gs\\bin\\gswin32\\gswin32c.exe'
                 else ''
               end
